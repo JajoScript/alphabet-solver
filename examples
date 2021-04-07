@@ -1,0 +1,20 @@
+# 1. Iteracion de Lenguajes.
+# Lenguaje.
+L = {a,b}
+
+# Concatenaciones sucesivas.
+3
+
+# 2. Determinación de la pertenencia de un Lenguaje.
+# Lenguaje.
+L = {a,b}
+
+# Cadena.
+aabb
+
+# 3. Concatenación de dos cadenas.
+# Cadena 1.
+L1 = {a,b,c}
+
+# Cadena 2.
+L2 = {a,b,c}
