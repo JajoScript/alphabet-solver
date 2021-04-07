@@ -6,20 +6,23 @@ class MasterManager():
     # Constructor.
 
     # Metodos.
-    def compiladorLaTeX(self):
+    def _compiladorLaTeX(self):
         pass
     
-    def manejadorArchivos(self, operador):
+    def _manejadorArchivos(self, operador):
         # Lecturas de archivos.
         if(operador == 1):
             try:        
                 with open("input", "rt") as Archivo:
-                    print(f"[CONTENT] {Archivo.read()}")
+                    print(f"[DEV][CONTENT] {Archivo.read()}")
             except FileNotFoundError:
                 print(f"[ERROR] El archivo input no fue creado.")    
+
         # Escritura de archivos.
         elif(operador == 2):
-            pass
+            with open("output", "wt") as Archivo:
+                pass
+            
 
         else:
             print(f"[ERROR] Ocurrio un error al administrar los archivos.")
@@ -30,13 +33,11 @@ class MasterManager():
         # 3. Concatenación de dos cadenas.
         pass
 
-    def administradorCadenas(self):
-        
+    def __administradorCadenas(self):
         pass
 
     # Getters & Setters.
-    pass
 
 # Instancias de la clase.
 MM = MasterManager()
-MM.manejadorArchivos(1)
+MM.menu()
