@@ -35,8 +35,23 @@ class MasterManager():
         pass
 
     # Getters & Setters.
+    
+    @property   #Metodo Getter
+    def obtener(self):
+        pass
+    @obtener.setter
+    def modificar(self):    #Metodo Setter
+        pass
+    
+    
     pass
 
-# Instancias de la clase.
-MM = MasterManager()
-MM.manejadorArchivos(1)
+
+def main():
+    # Instancias de la clase.
+    MM = MasterManager()
+    MM.manejadorArchivos(1)
+    
+    
+if __name__ == '__main__':
+    main()
