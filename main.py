@@ -8,7 +8,6 @@ import numpy as np
 # Definición de clase.
 class MasterManager():
     # Propiedades.
-    modoDepurador = False
 
     # Constructor.
     def __init__(self, modo):
