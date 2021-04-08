@@ -1,5 +1,5 @@
 # Lenguaje.
-L = {a,b}
+L={a,b,c,d}
 
 # Concatenaciones sucesivas.
 3
