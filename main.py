@@ -1,9 +1,10 @@
 # Desarrollo de un concatenador de alfabetos.
-# Autor: Javier Almarza.
-
 class MasterManager():
     # Propiedades.
+
     # Constructor.
+    def __init__(self):
+        pass
 
     # Metodos.
     def _compiladorLaTeX(self):
@@ -23,38 +24,60 @@ class MasterManager():
             with open("output", "wt") as Archivo:
                 pass
             
-
         else:
             print(f"[ERROR] Ocurrio un error al administrar los archivos.")
 
-    def menu(self):
-        # 1. Iteracion de Lenguajes.
-        # 2. Determinación de la pertenencia de un Lenguaje.
-        # 3. Concatenación de dos cadenas.
+    def __iteracionLenguaje(self):
         pass
+
+    def determinacionLenguaje(self):
+        pass
+
+    def concatenarCadenas(self):
+        pass
+
+    def menu(self):
+        print("[Alphabet-solver]\n")
+        print("[1] Iteración de un lenguaje.")
+        print("[2] Determinar si una cadena pertenece a un lenguaje.")
+        print("[3] Concatenación de dos cadenas.")
+        print("[4] Salir.")
+
+        opcion = input("[>] Escriba el numero de problema que desea resolver: ")
+
+        if opcion == '1':
+            pass
+        elif opcion == '2':
+            pass
+        elif opcion == '3':
+            pass
+        elif opcion == '4':
+            exit()
+        else:
+            print("[ERROR] No se ingreso una opción valida.")
 
     def __administradorCadenas(self):
         pass
 
     # Getters & Setters.
-    
-    @property   #Metodo Getter
+    @property   
+    # Metodos Getters
     def obtener(self):
         pass
+
     @obtener.setter
-    def modificar(self):    #Metodo Setter
+    # Metodos Setter.
+    def modificar(self):    
         pass
     
-    
-    pass
-
 
 # Ejecución
 def main():
     # Instancias de la clase.
     MM = MasterManager()
-    MM.manejadorArchivos(1)
-    
-    
+
+    while True:
+        MM.menu()
+            
 if __name__ == '__main__':
     main()
