@@ -1,42 +1,85 @@
 # Desarrollo de un concatenador de alfabetos.
-class MasterManager():
-    # Propiedades.
 
+# Dependencias.
+import os
+import time
+
+# Definición de clase.
+class MasterManager():
     # Constructor.
     def __init__(self):
         pass
 
     # Metodos.
-    def _compiladorLaTeX(self):
+    def __compiladorLaTeX(self):
         pass
-    
-    def _manejadorArchivos(self, operador):
+
+    def __controladorErrores(self, error):
+        self.__limpiarpantalla()
+        print(f"[ERROR] {error}")    
+        self.__tiempoEspera(3)
+
+    def __manejadorArchivos(self, operacion, nombreArchivo, configuracion, contenido):
         # Lecturas de archivos.
-        if(operador == 1):
+        if(operacion == "lectura"):
             try:        
-                with open("input", "rt") as Archivo:
-                    print(f"[DEV][CONTENT] {Archivo.read()}")
+                with open(nombreArchivo, "rt") as Archivo:
+                    if configuracion == "iteracion":
+                        print(f"[DEV] {Archivo.read()}")
+
+                    elif configuracion == "determinacion":
+                        print(f"[DEV] {Archivo.read()}")
+
+                    elif configuracion == "concatenacion":
+                        print(f"[DEV] {Archivo.read()}")
+
             except FileNotFoundError:
-                print(f"[ERROR] El archivo input no fue creado.")    
+                self.__controladorErrores("No se encontro el archivo especificado.")
 
         # Escritura de archivos.
-        elif(operador == 2):
+        elif(operacion == "escritura"):
             with open("output", "wt") as Archivo:
                 pass
             
         else:
-            print(f"[ERROR] Ocurrio un error al administrar los archivos.")
+            self.__controladorErrores("Ocurrio un error al administrar los archivos.")
+
+    def __tiempoEspera(self, segundos):
+        time.sleep(segundos)
+
+    def __limpiarpantalla(self):
+        if os.name == "nt":
+            os.system("cls")
+        else:
+            os.system("clear")
 
     def __iteracionLenguaje(self):
-        pass
+        self.__limpiarpantalla()
+        print("[Alphabet-solver/IteracionLenguaje]")
 
-    def determinacionLenguaje(self):
-        pass
+        # Apertura de archivo.
+        nombreArchivo = input("[>] Ingresa el nombre del archivo (input): ")
+        self.__manejadorArchivos("lectura", nombreArchivo, "iteracion", "")
 
-    def concatenarCadenas(self):
-        pass
+
+    def __determinacionLenguaje(self):
+        self.__limpiarpantalla()
+
+        # Apertura de archivo.
+        nombreArchivo = input("[>] Ingresa el nombre del archivo (input): ")
+        self.__manejadorArchivos("lectura", nombreArchivo, "determinacion", "")
+
+
+    def __concatenarCadenas(self):
+        self.__limpiarpantalla()
+
+        # Apertura de archivo.
+        nombreArchivo = input("[>] Ingresa el nombre del archivo (input): ")
+        self.__manejadorArchivos("lectura", nombreArchivo, "concatenar", "")
+
 
     def menu(self):
+        self.__limpiarpantalla()
         print("[Alphabet-solver]\n")
         print("[1] Iteración de un lenguaje.")
         print("[2] Determinar si una cadena pertenece a un lenguaje.")
@@ -46,18 +89,19 @@ class MasterManager():
         opcion = input("[>] Escriba el numero de problema que desea resolver: ")
 
         if opcion == '1':
-            pass
+            self.__iteracionLenguaje()
+
         elif opcion == '2':
-            pass
+            self.__determinacionLenguaje()
+
         elif opcion == '3':
-            pass
+            self.__concatenarCadenas()
+
         elif opcion == '4':
+            self.__limpiarpantalla()
             exit()
         else:
-            print("[ERROR] No se ingreso una opción valida.")
-
-    def __administradorCadenas(self):
-        pass
+            self.__controladorErrores("No se ingreso una opción valida.")
 
     # Getters & Setters.
     @property   
@@ -69,13 +113,12 @@ class MasterManager():
     # Metodos Setter.
     def modificar(self):    
         pass
-    
 
 # Ejecución
 def main():
     # Instancias de la clase.
     MM = MasterManager()
-
+    
     while True:
         MM.menu()
             
